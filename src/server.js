@@ -2,19 +2,23 @@ const qrcode = require('qrcode-terminal');
 const { Client } = require('whatsapp-web.js');
 const natural = require('natural');
 
+// Criação do cliente do WhatsApp Web
 const client = new Client();
 
-// Utilize um conjunto para armazenar os números de telefone que já receberam a saudação
+// Conjunto para armazenar os números de telefone que já receberam a saudação
 const saudacaoEnviada = new Set();
 
+// Evento para gerar o QR Code
 client.on('qr', (qr) => {
     qrcode.generate(qr, { small: true });
 });
 
+// Evento quando o cliente está pronto
 client.on('ready', () => {
     console.log('Bot está online!');
 });
 
+// Evento para receber mensagens
 client.on('message', async (message) => {
     console.log(`Mensagem recebida: ${message.body}`);
     console.log(saudacaoEnviada);
@@ -34,6 +38,7 @@ client.on('message', async (message) => {
     }
 });
 
+// Inicializa o cliente do WhatsApp Web
 client.initialize();
 
 // Função para obter resposta automática com base na mensagem recebida

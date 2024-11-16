@@ -11,9 +11,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "natural": "^6.10.4",
+    "natural": "^8.0.1",
     "qrcode-terminal": "^0.12.0",
-    "whatsapp-web.js": "^1.23.0"
+    "whatsapp-web.js": "^1.26.0"
   },
   "devDependencies": {
     "@types/qrcode-terminal": "^0.12.2"
